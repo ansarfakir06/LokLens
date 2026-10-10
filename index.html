@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LokLens — A Lens Through Development</title>
+
+    <!-- Google Fonts: Outfit for bold headings, Plus Jakarta Sans for clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Primary Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         1. TOP NAVIGATION BAR
+         ========================================== -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <!-- SVG Lens Icon: Represents transparency, civic observation, and focus -->
+                <div class="brand-icon-wrapper" aria-hidden="true">
+                    <svg class="lens-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <line x1="12" y1="3" x2="12" y2="5"/>
+                        <line x1="12" y1="19" x2="12" y2="21"/>
+                        <line x1="3" y1="12" x2="5" y2="12"/>
+                        <line x1="19" y1="12" x2="21" y2="12"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">LokLens</span>
+                    <span class="brand-subtitle">A Lens Through Development</span>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <span class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    Verified Source Mode
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         2. HERO SECTION
+         ========================================== -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">Civic Accountability Platform</div>
+            <h1 class="hero-title">Tracking Election Promises With Evidence</h1>
+            <p class="hero-description">
+                Explore assembly election promises, examine their on-ground implementation status, and verify progress against official government orders and public records.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         2.5 EXECUTIVE SUMMARY METRICS BAR
+         ========================================== -->
+    <section class="summary-metrics-section">
+        <div class="summary-metrics-container" id="summary-metrics">
+            <div class="stat-card">
+                <div class="stat-icon-wrapper blue">📊</div>
+                <div class="stat-content">
+                    <span class="stat-value" id="stat-total">5</span>
+                    <span class="stat-label">Guarantees Tracked</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper green">✅</div>
+                <div class="stat-content">
+                    <span class="stat-value" id="stat-active">4</span>
+                    <span class="stat-label">Active / Delivered</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper amber">⚖️</div>
+                <div class="stat-content">
+                    <span class="stat-value" id="stat-adjusted">1</span>
+                    <span class="stat-label">Policy Adjusted</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper violet">📑</div>
+                <div class="stat-content">
+                    <span class="stat-value" id="stat-verified">100%</span>
+                    <span class="stat-label">Documented Citations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         3. CONTROL BAR (State Picker, Search, Filters)
+         ========================================== -->
+    <section class="controls-section">
+        <div class="controls-container">
+            
+            <!-- State Selector -->
+            <div class="control-group state-control">
+                <label for="state-select" class="control-label">Select State / UT</label>
+                <div class="select-wrapper">
+                    <select id="state-select" class="custom-select">
+                        <option value="karnataka" selected>Karnataka (2023 Assembly)</option>
+                        <option value="tamil-nadu">Tamil Nadu</option>
+                        <option value="telangana">Telangana</option>
+                        <option value="andhra-pradesh">Andhra Pradesh</option>
+                        <option value="maharashtra">Maharashtra</option>
+                    </select>
+                    <span class="select-arrow" aria-hidden="true">▾</span>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="control-group search-control">
+                <label for="search-input" class="control-label">Search Promises</label>
+                <div class="search-input-wrapper">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Search by scheme name or keyword (e.g. electricity, travel, ₹2,000)..."
+                    >
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="filter-pills-container">
+            <button class="filter-pill active" data-category="all">All Promises (5)</button>
+            <button class="filter-pill" data-category="energy">⚡ Energy</button>
+            <button class="filter-pill" data-category="women">👩 Women Welfare</button>
+            <button class="filter-pill" data-category="food">🌾 Food Security</button>
+            <button class="filter-pill" data-category="youth">🎓 Youth & Jobs</button>
+            <button class="filter-pill" data-category="transport">🚌 Transport</button>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         4. MANIFESTO PROMISES OVERVIEW SECTION
+         ========================================== -->
+    <main class="manifesto-section">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title" id="section-title">Karnataka Congress Manifesto 2023</h2>
+                <p class="section-subtitle" id="section-subtitle">
+                    The 5 Flagship Guarantees announced in the 2023 Assembly Election.
+                </p>
+            </div>
+            <div class="manifesto-meta">
+                <span class="meta-tag">5 Guarantees</span>
+                <span class="meta-tag verified">Sources Linked</span>
+            </div>
+        </div>
+
+        <!-- Loading State Indicator (Simulates fetching verified records) -->
+        <div id="loading-state" class="loading-state" style="display: none;">
+            <div class="spinner" aria-hidden="true"></div>
+            <p class="loading-text">Loading verified government records...</p>
+        </div>
+
+        <!-- Grid of Promise Cards (Dynamically populated by script.js) -->
+        <div class="promise-grid" id="promise-grid" aria-live="polite"></div>
+
+        <!-- Empty State (Shown when state has no data or search finds zero matches) -->
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <div class="empty-icon">📂</div>
+            <h3 class="empty-title">Data Not Available Yet</h3>
+            <p class="empty-message">
+                We haven't compiled verified manifesto and government implementation records for this selection yet. We only publish verified data with official departmental sources.
+            </p>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         5. DETAILED PROMISE MODAL / DIALOG
+         ========================================== -->
+    <div id="promise-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-promise-name">
+        <div class="modal-card">
+            
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div>
+                    <div class="modal-badge-group">
+                        <span id="modal-category" class="badge category-badge">Category</span>
+                        <span id="modal-status" class="badge status-badge">Status</span>
+                    </div>
+                    <h2 id="modal-promise-name" class="modal-title">Promise Detail</h2>
+                    <span id="modal-dept" class="modal-dept-text" style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; display: block;"></span>
+                </div>
+                <button id="modal-close-btn" class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="modal-body">
+                
+                <!-- Section A: Original Manifesto Promise -->
+                <div class="modal-block">
+                    <h4 class="block-title">📜 Original Manifesto Promise (2023)</h4>
+                    <blockquote id="modal-manifesto-quote" class="manifesto-quote">
+                        Original promise quote from the official manifesto document.
+                    </blockquote>
+                </div>
+
+                <!-- Section B: Implementation Scheme Details -->
+                <div class="modal-block">
+                    <h4 class="block-title">⚙️ On-Ground Implementation Details</h4>
+                    <p id="modal-implementation-text" class="modal-text">
+                        Details of how the scheme is executed on the ground.
+                    </p>
+                    <div id="modal-eligibility-block" style="margin-top: 8px;">
+                        <span style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px;">Beneficiary Eligibility:</span>
+                        <p id="modal-eligibility-text" style="font-size: 13.5px; color: #CBD5E1; margin-top: 2px;"></p>
+                    </div>
+                </div>
+
+                <!-- Section C: Appropriate Metric Breakdown -->
+                <div class="modal-block">
+                    <h4 class="block-title">📊 Key Metrics & Scheme Parameters</h4>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-card-label">Target / Benefit</span>
+                            <strong id="modal-metric-target" class="metric-card-val">—</strong>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-card-label">Reported Delivery Metric</span>
+                            <strong id="modal-metric-delivery" class="metric-card-val">—</strong>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-card-label">Metric Type</span>
+                            <strong id="modal-metric-type" class="metric-card-val">—</strong>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-card-label">Last Source Check</span>
+                            <strong id="modal-metric-updated" class="metric-card-val">—</strong>
+                        </div>
+                        <div class="metric-card" style="grid-column: 1 / -1;">
+                            <span class="metric-card-label">Progress Assessment Model</span>
+                            <strong id="modal-metric-model" class="metric-card-val" style="color: #38BDF8;">—</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section D: Transparency & Data Rules Notice -->
+                <div class="modal-block notice-block">
+                    <h4 class="block-title">🛡️ Data Transparency Note</h4>
+                    <p id="modal-data-notes" class="modal-text muted">
+                        LokLens reports metrics using scheme-appropriate units (beneficiaries, units, or DBT transfers) rather than generic percentages. We do not fabricate completion rates when official totals are not defensibly measurable.
+                    </p>
+                </div>
+
+                <!-- Section E: Sources & Citations -->
+                <div class="modal-block">
+                    <h4 class="block-title">🔗 Official Documented Sources</h4>
+                    <ul id="modal-sources-list" class="sources-list">
+                        <li>
+                            <a href="Assembly_Election_Karnataka_Manifesto_2023_241fdc08d0.pdf" target="_blank" rel="noopener noreferrer">
+                                📄 Karnataka Congress Assembly Election Manifesto 2023 (Official PDF)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button id="modal-footer-close" class="btn-secondary" type="button">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==========================================
+         6. FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-brand">LokLens — A Lens Through Development</div>
+                <p class="footer-note">
+                    An educational civic-technology project tracking election promises against verifiable government implementation records. Non-partisan and evidence-driven.
+                </p>
+            </div>
+            <div class="footer-right">
+                <span class="footer-tag">Initial Focus: Karnataka (2023–2028)</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Data Store (Structured manifesto and government records) -->
+    <script src="data.js"></script>
+    <!-- Application Logic (Rendering, Filtering, Modal Controller) -->
+    <script src="script.js"></script>
+</body>
+</html>

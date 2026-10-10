@@ -1,0 +1,9 @@
+# LokLens — Production & Development Dependencies
+Flask>=3.1.0
+flask-cors>=6.0.0
+python-dotenv>=1.0.0
+PyMySQL>=1.1.0
+cryptography>=41.0.0
+pypdf>=6.20.0
+gunicorn>=21.0.0
+waitress>=3.0.0

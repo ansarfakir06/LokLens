@@ -1,0 +1,35 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment and Secrets (CRITICAL: Never commit passwords)
+.env
+.env.local
+*.pem
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Personal Documents & Installers
+*.docx
+*.exe
